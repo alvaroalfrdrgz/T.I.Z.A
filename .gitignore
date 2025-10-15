@@ -1,16 +1,22 @@
-# Godot 4+ specific ignores
+# Godot
 .godot/
-.nomedia
+.import/            # carpeta de archivos de import binarios (no recomendable subir)
+.export/            # archivos temporales de export
+# Keep *.import files (they store import settings) -> do NOT ignore "*.import"
 
-# Godot-specific ignores
-.import/
-export.cfg
-export_credentials.cfg
-
-# Imported translations (automatically generated from CSV files)
-*.translation
-
-# Mono-specific ignores
+# Mono / C# (si usas)
 .mono/
-data_*/
-mono_crash.*.json
+*.csproj
+*.sln
+*.userprefs
+
+# IDEs / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Builds / temp
+bin/
+build/
+*.log
