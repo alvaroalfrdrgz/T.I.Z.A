@@ -11,5 +11,41 @@ config_version=5
 [application]
 
 config/name="T.I.Z.A"
+config/version="0.01"
+run/main_scene="uid://btym33fgd4sw0"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+run/max_fps=60
+boot_splash/bg_color=Color(0.12506652, 0.13305378, 0.21637353, 1)
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/always_on_top=true
+window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "blue",
+"res://scenes/": "orange",
+"res://scripts/": "red",
+"res://shaders/": "green",
+"res://themes/": "pink"
+}
+
+[layer_names]
+
+3d_render/layer_1="environment"
+3d_render/layer_2="professor"
+3d_render/layer_3="students"
+3d_physics/layer_1="environment"
+3d_navigation/layer_1="environment"
+3d_physics/layer_2="professor"
+3d_navigation/layer_2="professor"
+3d_physics/layer_3="students"
+3d_navigation/layer_3="students"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
