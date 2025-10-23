@@ -6,7 +6,7 @@
 radius = 1.7753906
 height = 7.123047
 
-[node name="student" instance=ExtResource("1_y87o8")]
+[node name="Professor" instance=ExtResource("1_y87o8")]
 transform = Transform3D(-0.24, 0, -2.0981465e-08, 0, 0.24, 0, 2.0981465e-08, 0, -0.24, 0, 0, 0)
 
 [node name="Skeleton3D" parent="rig_002" index="0"]
@@ -431,6 +431,6 @@ bones/618/rotation = Quaternion(-0.705483, -0.039486766, -0.047892045, 0.7060035
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "rig_002Action_001"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+[node name="ProfessorCollision" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2109375, 0)
 shape = SubResource("CapsuleShape3D_4orpo")
