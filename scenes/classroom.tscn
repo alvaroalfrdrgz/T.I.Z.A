@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://btym33fgd4sw0"]
+[gd_scene load_steps=7 format=3 uid="uid://btym33fgd4sw0"]
 
 [ext_resource type="PackedScene" uid="uid://r16jma2mnrbn" path="res://scenes/main_camera.tscn" id="1_xkx8l"]
 [ext_resource type="PackedScene" uid="uid://ckfvvig8rmusg" path="res://scenes/table.tscn" id="2_x5cc4"]
 [ext_resource type="PackedScene" uid="uid://dlbj2c272j6lx" path="res://scenes/floor.tscn" id="3_kkrti"]
 [ext_resource type="PackedScene" uid="uid://7jie5r7h3a2m" path="res://scenes/chair.tscn" id="4_x5cc4"]
-[ext_resource type="PackedScene" uid="uid://dnrbjh7rt4tbh" path="res://scenes/professor.tscn" id="5_kkrti"]
+[ext_resource type="PackedScene" path="res://scenes/professor.tscn" id="5_kkrti"]
+[ext_resource type="PackedScene" uid="uid://cn7w8ekg5nsr4" path="res://scenes/ui.tscn" id="6_xubko"]
 
 [node name="Classroom" type="Node3D"]
 
@@ -81,3 +82,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16679716, 0, -0.034326553)
 
 [node name="student" parent="." instance=ExtResource("5_kkrti")]
 transform = Transform3D(-0.24, 0, -2.0981465e-08, 0, 0.24, 0, 2.0981465e-08, 0, -0.24, -0.48724365, 0.03027729, 5.4165077)
+
+[node name="UI" parent="." instance=ExtResource("6_xubko")]

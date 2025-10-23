@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://qcyfkd7hrxdo"]
+
+[ext_resource type="FontFile" uid="uid://binudt2ypkb6o" path="res://assets/fonts/Neat Chalk.ttf" id="1_df7aj"]
+
+[resource]
+font = ExtResource("1_df7aj")
+font_size = 2421
+font_color = Color(0, 0, 0, 1)
