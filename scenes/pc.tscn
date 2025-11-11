@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvryj64l3taxj"]
+
+[ext_resource type="PackedScene" uid="uid://bga56togdr18a" path="res://assets/3d/classroom/pc.glb" id="1_5rl7t"]
+[ext_resource type="Script" uid="uid://dc1ipyhuhsnkn" path="res://scripts/monitor.gd" id="2_qd3p6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wdt7"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o5wjj"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(11, 11)
+size = Vector2(0.775, 0.43)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5rl7t"]
+size = Vector3(0.843277, 0.695282, 0.22998047)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qd3p6"]
+size = Vector3(0.41003513, 0.6082611, 0.71203613)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5wjj"]
+size = Vector3(0.7048799, 0.031354904, 0.33796692)
+
+[node name="Pc" instance=ExtResource("1_5rl7t")]
+script = ExtResource("2_qd3p6")
+
+[node name="ComputerMesh" parent="." index="0"]
+transform = Transform3D(-0.19207476, 0, 0.0040794523, 0, 0.29655948, 0, -0.0022269052, 0, -0.35186043, -0.47628832, 0.36702067, 0.06528056)
+
+[node name="MonitorMesh" parent="." index="1"]
+transform = Transform3D(-0.26143637, 0, 0.00047343867, 0, 0.38119146, 0, -0.0032926146, 0, -0.037591428, 0.2865677, 0.2468273, -0.17935407)
+layers = 1
+
+[node name="KeyboardMesh" parent="." index="2"]
+transform = Transform3D(0.35231894, 0, 0, 0, 0.35231894, 0, 0, 0, 0.17002347, 0.16363335, 0.017000899, 0.15209353)
+
+[node name="Screen" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(0.9998477, -0.017452406, 0, -7.628689e-10, -4.370473e-08, -1, 0.017452406, 0.9998477, -4.371139e-08, 0.29406685, 0.43971932, -0.09808487)
+material_overlay = SubResource("StandardMaterial3D_2wdt7")
+mesh = SubResource("PlaneMesh_o5wjj")
+
+[node name="ScreenViewport" type="SubViewport" parent="." index="4"]
+size = Vector2i(128, 72)
+
+[node name="MonitorCollision" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29599762, 0.34172058, -0.19995117)
+visible = false
+shape = SubResource("BoxShape3D_5rl7t")
+debug_color = Color(0, 0.5333333, 1, 1)
+
+[node name="ComputerCollision" type="CollisionShape3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42559218, 0.29821014, 0.010842919)
+visible = false
+shape = SubResource("BoxShape3D_qd3p6")
+debug_color = Color(0, 0.5333333, 1, 1)
+
+[node name="KeyboardCollision" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16387242, 0.016697884, 0.15744174)
+visible = false
+shape = SubResource("BoxShape3D_o5wjj")
+debug_color = Color(0, 0.5333333, 1, 1)
+
+[node name="ScreenLight" type="OmniLight3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26650354, 0.23368943, 0.3240562)
+light_color = Color(0, 0, 0, 1)
+light_energy = 0.515
+light_specular = 0.0
+light_cull_mask = 4293918733
+
+[node name="ColorTimer" type="Timer" parent="." index="9"]

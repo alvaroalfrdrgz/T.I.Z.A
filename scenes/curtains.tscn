@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bthw1ofk0lpa8"]
+
+[ext_resource type="PackedScene" uid="uid://dpoh85jchehw0" path="res://assets/3d/classroom/curtains.glb" id="1_7xo5a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnhy8"]
+size = Vector3(0.31497192, 2.5357056, 1.9019775)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d4hdf"]
+size = Vector3(0.33502197, 2.5357056, 2.158081)
+
+[node name="Curtains" instance=ExtResource("1_7xo5a")]
+
+[node name="CurtainsMesh" parent="." index="0"]
+transform = Transform3D(0.054696724, 0, 0, 0, 0, -0.054696724, 0, 4.2599196, 0, 0.077438086, 1.788207, -0.10072136)
+
+[node name="CurtainsCollision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05582428, 1.8631287, 3.1052241)
+shape = SubResource("BoxShape3D_lnhy8")
+
+[node name="CurtainsCollision2" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.065849304, 1.8631287, -3.2146)
+shape = SubResource("BoxShape3D_d4hdf")

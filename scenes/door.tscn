@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnmal60bu8qkx"]
+
+[ext_resource type="PackedScene" uid="uid://bw68acmvpnwy4" path="res://assets/3d/classroom/door.glb" id="1_hpvv5"]
+[ext_resource type="Script" uid="uid://bv35g8em7am55" path="res://scripts/door.gd" id="2_uvdjg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvdjg"]
+size = Vector3(0.24742126, 2.185608, 2.002266)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83dcw"]
+size = Vector3(0.24742126, 2.185608, 1.0152588)
+
+[sub_resource type="Animation" id="Animation_uvdjg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorMesh/LeftDoorMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.673004e-05, -0.6088501, 4.5169454)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorMesh/RightDoorMesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.673004e-05, -0.60885, -4.5169277)]
+}
+
+[sub_resource type="Animation" id="Animation_hpvv5"]
+resource_name = "open_door"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorMesh/LeftDoorMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.673004e-05, -0.6088501, 4.5169454), Vector3(4.673004e-05, -0.6088501, 14.514506)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorMesh/RightDoorMesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.673004e-05, -0.60885, -4.5169277), Vector3(4.673004e-05, -0.60885, -14.514488)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83dcw"]
+_data = {
+&"RESET": SubResource("Animation_uvdjg"),
+&"open_door": SubResource("Animation_hpvv5")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpvv5"]
+size = Vector3(1.5160522, 1.295166, 1.8380127)
+
+[node name="Door" instance=ExtResource("1_hpvv5")]
+script = ExtResource("2_uvdjg")
+
+[node name="DoorMesh" parent="." index="0"]
+transform = Transform3D(1.2313247, 0, 0, 0, 1, 0, 0, 0, 0.10002441, -0.0147771835, 1.6432016, 0.013432264)
+
+[node name="LeftDoorMesh" parent="DoorMesh" index="0"]
+transform = Transform3D(0.5235732, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 4.673004e-05, -0.6088501, 4.5169454)
+
+[node name="RightDoorMesh" parent="DoorMesh" index="1"]
+transform = Transform3D(0.5235732, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 4.673004e-05, -0.60885, -4.5169277)
+
+[node name="DoorClosedCollision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014640808, 1.0843811, 0.013553619)
+shape = SubResource("BoxShape3D_uvdjg")
+debug_color = Color(0.3169909, 0.48714757, 1, 1)
+
+[node name="DoorOpenCollision1" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014640808, 1.0843811, 1.4429016)
+shape = SubResource("BoxShape3D_83dcw")
+debug_color = Color(0.3169909, 0.48714757, 1, 1)
+
+[node name="DoorOpenCollision2" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014640808, 1.0843811, -1.4076767)
+shape = SubResource("BoxShape3D_83dcw")
+debug_color = Color(0.3169909, 0.48714757, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+&"": SubResource("AnimationLibrary_83dcw")
+}
+
+[node name="OpenArea" type="Area3D" parent="." index="5"]
+collision_layer = 16
+collision_mask = 2
+
+[node name="AreaCollision" type="CollisionShape3D" parent="OpenArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006500244, 0.6431885, 0.010803223)
+shape = SubResource("BoxShape3D_hpvv5")
+debug_color = Color(0.9529412, 0, 0, 1)
+
+[connection signal="body_entered" from="OpenArea" to="." method="_on_open_area_body_entered"]
+[connection signal="body_exited" from="OpenArea" to="." method="_on_open_area_body_exited"]

@@ -1,9 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://cn7w8ekg5nsr4"]
+[gd_scene load_steps=22 format=3 uid="uid://cn7w8ekg5nsr4"]
 
 [ext_resource type="Script" uid="uid://cj46nyaaxaew2" path="res://scripts/ui.gd" id="1_nt7q6"]
-[ext_resource type="LabelSettings" uid="uid://qcyfkd7hrxdo" path="res://settings/ui label.tres" id="2_yev5y"]
 [ext_resource type="Texture2D" uid="uid://c1ahxw3tr30le" path="res://assets/ui/abraham.png" id="3_gdt2y"]
+[ext_resource type="Shader" uid="uid://cs262745pgcn6" path="res://shaders/Classroom.gdshader" id="3_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://ctn48337byl50" path="res://assets/ui/Cintra6.png" id="4_gdt2y"]
+[ext_resource type="FontFile" uid="uid://cigpef5wee61e" path="res://assets/fonts/Kidz Block.ttf" id="5_wm3ai"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yev5y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
+font = ExtResource("5_wm3ai")
+font_size = 128
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dubc"]
+shader = ExtResource("3_wm3ai")
 
 [sub_resource type="Gradient" id="Gradient_wm3ai"]
 offsets = PackedFloat32Array(1)
@@ -11,17 +21,29 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8dubc"]
 gradient = SubResource("Gradient_wm3ai")
-width = 200
-height = 30
+width = 537
+height = 70
 
 [sub_resource type="Gradient" id="Gradient_p7vwb"]
 offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.5546507, 0.9998545, 0.99999994, 1)
+colors = PackedColorArray(0.46599817, 0.7659561, 0.99999994, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ktti3"]
 gradient = SubResource("Gradient_p7vwb")
-width = 200
-height = 25
+width = 537
+height = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_wm3ai"]
+font = ExtResource("5_wm3ai")
+font_size = 66
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yev5y"]
+font = ExtResource("5_wm3ai")
+font_size = 777
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p7vwb"]
+shader = ExtResource("3_wm3ai")
 
 [sub_resource type="Gradient" id="Gradient_gdt2y"]
 offsets = PackedFloat32Array(1)
@@ -37,75 +59,113 @@ colors = PackedColorArray(1, 0.007843138, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p7vwb"]
 gradient = SubResource("Gradient_8dubc")
 
-[node name="UI" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdt2y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dubc"]
+font = ExtResource("5_wm3ai")
+font_size = 166
+
+[node name="UI" type="CanvasLayer"]
+scale = Vector2(0.615, 0.615)
+transform = Transform2D(0.615, 0, 0, 0.615, 0, 0)
 script = ExtResource("1_nt7q6")
 
-[node name="ProfessorStats" type="CanvasLayer" parent="."]
+[node name="ProfessorStats" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.523
+anchor_bottom = 0.22000001
+offset_right = 0.8399658
+offset_bottom = 0.39997864
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yev5y")
+
+[node name="ProfessorName" type="Label" parent="ProfessorStats"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 226.0
+offset_top = -7.0
+offset_right = 750.0
+offset_bottom = 154.0
+text = "Profesor"
+label_settings = SubResource("LabelSettings_gdt2y")
 
 [node name="ProfessorPicture" type="TextureRect" parent="ProfessorStats"]
-offset_left = 6.0
-offset_top = 1.0
-offset_right = 1030.0
-offset_bottom = 1025.0
+material = SubResource("ShaderMaterial_8dubc")
+layout_mode = 0
+offset_left = 4.0
+offset_top = 13.0
+offset_right = 2666.5
+offset_bottom = 2675.5
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("3_gdt2y")
 
-[node name="ProfessorName" type="Label" parent="ProfessorStats"]
-offset_left = 91.0
-offset_top = 2.0
-offset_right = 21529.0
-offset_bottom = 4609.0
-scale = Vector2(0.01, 0.01)
-text = "ABRAHAM"
-label_settings = ExtResource("2_yev5y")
-
 [node name="StaminaBar" type="TextureProgressBar" parent="ProfessorStats"]
-offset_left = 96.0
-offset_top = 50.0
-offset_right = 296.0
-offset_bottom = 80.0
+layout_mode = 0
+offset_left = 222.0
+offset_top = 144.0
+offset_right = 759.0
+offset_bottom = 214.0
 texture_under = SubResource("GradientTexture2D_8dubc")
 texture_progress = SubResource("GradientTexture2D_ktti3")
 
 [node name="StaminaText" type="Label" parent="ProfessorStats"]
-offset_left = 116.0
-offset_top = 49.0
-offset_right = 19342.0
-offset_bottom = 4656.0
-scale = Vector2(0.007, 0.007)
+texture_filter = 1
+layout_mode = 0
+offset_left = 356.0
+offset_top = 141.0
+offset_right = 596.0
+offset_bottom = 224.0
 text = "STAMINA"
-label_settings = ExtResource("2_yev5y")
+label_settings = SubResource("LabelSettings_wm3ai")
 
 [node name="CintraPicture" type="TextureRect" parent="ProfessorStats"]
 texture_filter = 1
-offset_left = 291.0
-offset_top = -2.0
-offset_right = 419.0
-offset_bottom = 126.0
-scale = Vector2(0.695, 0.695)
+layout_mode = 0
+offset_left = 725.00006
+offset_top = 3.0
+offset_right = 853.00006
+offset_bottom = 131.0
+scale = Vector2(1.73, 1.73)
 texture = ExtResource("4_gdt2y")
 
 [node name="CintraAmount" type="Label" parent="ProfessorStats"]
-offset_left = 361.0
-offset_top = 2.0
-offset_right = 5857.0
-offset_bottom = 4609.0
-scale = Vector2(0.01, 0.01)
+texture_filter = 1
+layout_mode = 0
+offset_left = 906.9999
+offset_top = 26.999996
+offset_right = 2340.0
+offset_bottom = 929.0
+scale = Vector2(0.085, 0.085)
 text = "X0"
-label_settings = ExtResource("2_yev5y")
+label_settings = SubResource("LabelSettings_yev5y")
 
 [node name="CintraBar" type="TextureProgressBar" parent="ProfessorStats"]
-offset_left = 373.00003
-offset_top = 48.0
-offset_right = 437.00003
-offset_bottom = 112.0
-scale = Vector2(0.495, 0.495)
+material = SubResource("ShaderMaterial_p7vwb")
+layout_mode = 0
+offset_left = 898.00006
+offset_top = 104.0
+offset_right = 962.00006
+offset_bottom = 168.0
+scale = Vector2(1.48, 1.48)
 fill_mode = 4
 texture_under = SubResource("GradientTexture2D_wm3ai")
 texture_progress = SubResource("GradientTexture2D_p7vwb")
+
+[node name="StudentStats" type="Panel" parent="."]
+visible = false
+offset_left = 2144.7153
+offset_right = 3115.4473
+offset_bottom = 237.39839
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gdt2y")
+
+[node name="StudentName" type="Label" parent="StudentStats"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_top = 21.138214
+offset_right = -10.0
+offset_bottom = 229.13821
+grow_horizontal = 0
+text = "name"
+label_settings = SubResource("LabelSettings_8dubc")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://tbsi8317a3bs"]
+
+[ext_resource type="PackedScene" uid="uid://8md0fv1i3bla" path="res://assets/3d/classroom/window_wall.glb" id="1_rcsby"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rcsby"]
+size = Vector3(9.414101, 3.9835815, 0.61221313)
+
+[node name="WindowWall" instance=ExtResource("1_rcsby")]
+
+[node name="WindowWallMesh" parent="." index="0"]
+transform = Transform3D(4.7063756, 0, 0, 0, 4.7063756, 0, 0, 0, 4.7063756, 0.049, 2.038, -0.021)
+
+[node name="WindowWallCollision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.023, 1.992, -0.015)
+shape = SubResource("BoxShape3D_rcsby")
+debug_color = Color(0.1764706, 0.34117648, 1, 1)

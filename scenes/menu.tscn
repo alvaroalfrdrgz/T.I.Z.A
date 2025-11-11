@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0bppkwe8w8mt"]
+
+[ext_resource type="Script" uid="uid://7b2y0oeoimmy" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://do5f6osiwuwmu" path="res://assets/Screenshot 2025-11-03 133550.png" id="1_yqeox"]
+[ext_resource type="Theme" uid="uid://530mfykytx07" path="res://themes/menu.tres" id="2_vjb58"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_con2f"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_con2f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -113.0
+offset_top = 2.0
+offset_right = 2027.0
+offset_bottom = 1076.0
+texture = ExtResource("1_yqeox")
+
+[node name="MainButtons" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_con2f")
+
+[node name="Play" type="Button" parent="MainButtons"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 596.0
+offset_right = 305.0
+offset_bottom = 712.0
+theme = ExtResource("2_vjb58")
+text = "PLAY"
+
+[node name="Exit" type="Button" parent="MainButtons"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 795.0
+offset_right = 305.0
+offset_bottom = 911.0
+theme = ExtResource("2_vjb58")
+text = "EXIT"
+
+[connection signal="button_down" from="MainButtons/Play" to="." method="_on_play_button_down"]

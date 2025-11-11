@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ryjrppobn1jl"]
+
+[ext_resource type="PackedScene" uid="uid://8esx6nch482p" path="res://assets/3d/classroom/split.glb" id="1_mt3wx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pah5i"]
+size = Vector3(1.6546631, 0.696167, 0.42749023)
+
+[node name="Split" instance=ExtResource("1_mt3wx")]
+
+[node name="Spli" parent="." index="0"]
+transform = Transform3D(0.85232955, 0, 0, 0, 0.35134712, 0, 0, 0, 0.3109027, -0.0018982887, 2.4708276, -0.030943692)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013366699, 2.5108032, -0.020874023)
+shape = SubResource("BoxShape3D_pah5i")
+debug_color = Color(0.36078432, 0.48235294, 1, 1)

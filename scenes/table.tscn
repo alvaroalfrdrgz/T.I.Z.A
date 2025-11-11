@@ -1,25 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckfvvig8rmusg"]
+[gd_scene load_steps=5 format=3 uid="uid://ckfvvig8rmusg"]
 
-[ext_resource type="PackedScene" uid="uid://b4o4ubol37tav" path="res://assets/classroom/table.glb" id="1_02ppr"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xa0as"]
-size = Vector3(1.3451538, 0.10543823, 0.7711792)
+[ext_resource type="PackedScene" uid="uid://c2cod2f24kp85" path="res://assets/3d/classroom/table.glb" id="1_02ppr"]
+[ext_resource type="Script" uid="uid://civ5o4amdnivx" path="res://scripts/table.gd" id="2_eotx8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_02ppr"]
-size = Vector3(2.3935547, 0.7802124, 0.7711792)
+size = Vector3(1.4560547, 0.17077637, 0.90045166)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eotx8"]
+size = Vector3(0.6875, 0.17077637, 0.51551056)
 
 [node name="Table" instance=ExtResource("1_02ppr")]
+collision_mask = 7
+script = ExtResource("2_eotx8")
 
-[node name="Cube_020" parent="." index="0"]
-transform = Transform3D(0.6352083, 0, 0, 0, 0.044747, 0, 0, 0, 0.35463965, -1.9953334, 0.7379169, -0.4308436)
-visibility_range_end_margin = 30.85
+[node name="TableMesh" parent="." index="0"]
+transform = Transform3D(0.72833014, 0, 0, 0, 0.46349347, 0, 0, 0, 0.45251876, 0, 0.48, 0)
 
 [node name="TableCollision" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02798462, 0.723526, -0.44137573)
-shape = SubResource("BoxShape3D_xa0as")
-
-[node name="CheckArea" type="Area3D" parent="." index="2"]
-
-[node name="TableCollision" type="CollisionShape3D" parent="CheckArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037719727, 0.38613892, -0.44137573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0024414063, 0.64263916, 0.067474365)
 shape = SubResource("BoxShape3D_02ppr")
+debug_color = Color(0.26, 0.5066668, 1, 1)
+
+[node name="InteractionArea" type="Area3D" parent="." index="2"]
+collision_layer = 16
+collision_mask = 2
+
+[node name="AreaCollision" type="CollisionShape3D" parent="InteractionArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38671875, 0.64263916, 0.7054863)
+shape = SubResource("BoxShape3D_eotx8")
+debug_color = Color(0.9843137, 0, 0, 1)
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]

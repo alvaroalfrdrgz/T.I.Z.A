@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc7v7yaeer8vs"]
+
+[ext_resource type="PackedScene" uid="uid://dfm8yunbdh1t1" path="res://assets/3d/classroom/ceiling.glb" id="1_ji6l1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gl8kw"]
+size = Vector3(1.9961548, 0.12878418, 1.9945068)
+
+[node name="Ceiling" instance=ExtResource("1_ji6l1")]
+
+[node name="FloorMesh" parent="." index="0"]
+transform = Transform3D(4.7063756, 0, 0, 0, 4.7063756, 0, 0, 0, 4.7063756, -0.017219543, -0.31224608, 0.022367477)
+
+[node name="FloorCollision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(4.706375, 0, 0, 0, 4.706375, 0, 0, 0, 4.706375, -0.03597927, -0.3079372, -0.03360796)
+shape = SubResource("BoxShape3D_gl8kw")
+debug_color = Color(0.26999998, 0.5011668, 1, 1)
+
+[node name="Lights" type="Node3D" parent="." index="2"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4304266, -1.1990644, 2.5025485)
+light_energy = 2.697
+light_specular = 0.0
+light_cull_mask = 4294950911
+omni_range = 6.39
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4895954, -1.1990644, 2.402403)
+light_energy = 2.697
+light_specular = 0.0
+light_cull_mask = 4294950911
+omni_range = 6.39
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.511364, -1.1990644, -2.0921628)
+light_energy = 2.697
+light_specular = 0.0
+light_cull_mask = 4294950911
+omni_range = 6.39
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4100637, -1.1990644, -2.023338)
+light_energy = 2.697
+light_specular = 0.0
+light_cull_mask = 4294950911
+omni_range = 6.39

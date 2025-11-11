@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwhxrfa8kwvaw"]
+
+[ext_resource type="PackedScene" uid="uid://cijyhxfxn1yv3" path="res://assets/3d/classroom/column.glb" id="1_rrhsg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8j7h3"]
+size = Vector3(0.61221313, 3.9847412, 0.6116028)
+
+[node name="Column" instance=ExtResource("1_rrhsg")]
+
+[node name="ColumnMesh" parent="." index="0"]
+transform = Transform3D(4.7063756, 0, 0, 0, 4.7063756, 0, 0, 0, 4.7063756, 0.005, 1.992, -0.014)
+
+[node name="ColumnCollision" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005050659, 1.9918823, -0.01423645)
+shape = SubResource("BoxShape3D_8j7h3")
+debug_color = Color(0.37, 0.4749999, 1, 1)

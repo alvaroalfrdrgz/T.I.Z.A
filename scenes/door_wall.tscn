@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5bt78s602hh0"]
+
+[ext_resource type="PackedScene" uid="uid://cqadopngu4aii" path="res://assets/3d/classroom/door_wall.glb" id="1_spokl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_quwfp"]
+size = Vector3(6.5151415, 3.9835815, 0.61221313)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_spokl"]
+size = Vector3(0.89710426, 3.9835815, 0.61221313)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jf717"]
+size = Vector3(2.005526, 0.61122894, 0.61221313)
+
+[node name="DoorWall" instance=ExtResource("1_spokl")]
+
+[node name="DoorWallMesh" parent="." index="0"]
+transform = Transform3D(0, 0, 4.7063756, 0, 4.7063756, 0, -4.7063756, 0, 0, 0.049, 2.038, -0.021)
+
+[node name="DoorWallCollision1" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.046999935, 1.992, 1.3124796)
+shape = SubResource("BoxShape3D_quwfp")
+debug_color = Color(0.1764706, 0.34117648, 1, 1)
+
+[node name="DoorWallCollision2" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.047000185, 1.992, -4.3954983)
+shape = SubResource("BoxShape3D_spokl")
+debug_color = Color(0.1764706, 0.34117648, 1, 1)
+
+[node name="DoorWallCollision3" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.04700018, 0.3357005, -2.9518669)
+shape = SubResource("BoxShape3D_jf717")
+debug_color = Color(0.1764706, 0.34117648, 1, 1)

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr0tf7aappu1y"]
+
+[ext_resource type="PackedScene" uid="uid://xtnp4aa6rlhb" path="res://assets/3d/classroom/professor_site.glb" id="1_3og55"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uija3"]
+size = Vector3(0.87493896, 0.8726196, 2.4921875)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4fequ"]
+size = Vector3(0.87493896, 0.8726196, 2.4921875)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hn11q"]
+size = Vector3(0.7021942, 0.8726196, 0.5158081)
+
+[node name="ProfessorSite" instance=ExtResource("1_3og55")]
+
+[node name="ProfessorTableMesh" parent="." index="0"]
+transform = Transform3D(0, 0, -0.71869445, 0, 0.4724818, 0, 0.6375179, 0, 0, -0.3232727, 0.4707128, 0.11043137)
+
+[node name="ShelfMesh" parent="." index="1"]
+transform = Transform3D(0.3066139, 0, 0, 0, 0.82604975, 0, 0, 0, 0.7327733, -0.72507095, 1.4292163, -0.81079406)
+
+[node name="ProfessorChairMesh" parent="." index="2"]
+transform = Transform3D(0.27301902, 0, -0.00018603355, 0, 0.2730191, 0, 0.00018603355, 0, 0.27301902, 0.5890362, 0.3537897, -0.4066642)
+
+[node name="MainMoniorMesh" parent="." index="3"]
+transform = Transform3D(0.43536797, 0, -0.009048269, 0, 0.24003579, 0, 0.12506834, 0, 0.031497393, 0.26883543, 1.1783864, 0.620866)
+
+[node name="MainKeyboardMesh" parent="." index="4"]
+transform = Transform3D(-0.34493342, 0, 0.0346305, 0, 0.35231894, 0, -0.071760565, 0, -0.16645934, 0.47851062, 0.8923005, 0.29931635)
+
+[node name="MainMouseMesh" parent="." index="5"]
+transform = Transform3D(-0.03497779, 0, 0.040838007, 0, 0.027553348, 0, -0.020672414, 0, -0.06909803, -0.06640673, 0.91038525, 0.16932243)
+
+[node name="MainComputerMesh" parent="." index="6"]
+transform = Transform3D(0.17402875, 0, -0.14895508, 0, 0.29655948, 0, 0.08131209, 0, 0.31880212, -0.58809966, 1.174952, 0.43599504)
+
+[node name="TableCollision1" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8653445, 0.434906, -0.36410862)
+shape = SubResource("BoxShape3D_uija3")
+debug_color = Color(0.39215687, 0.40784314, 1, 1)
+
+[node name="TableCollision2" type="CollisionShape3D" parent="." index="8"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.55885935, 0.434906, 0.40476078)
+shape = SubResource("BoxShape3D_4fequ")
+debug_color = Color(0.39215687, 0.40784314, 1, 1)
+
+[node name="ChairCollision" type="CollisionShape3D" parent="." index="9"]
+transform = Transform3D(0.005759537, 0, 0.9999835, 0, 1, 0, -0.9999835, 0, 0.005759537, 0.589895, 0.434906, -0.42856473)
+shape = SubResource("BoxShape3D_hn11q")
+debug_color = Color(0.39215687, 0.40784314, 1, 1)

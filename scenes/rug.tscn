@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dikctet7b1mbk"]
+
+[ext_resource type="PackedScene" uid="uid://yui26efp6rmg" path="res://assets/3d/classroom/rug.glb" id="1_54v33"]
+
+[node name="Rug" instance=ExtResource("1_54v33")]
+
+[node name="RugMesh" parent="." index="0"]
+transform = Transform3D(0.59900045, 0, 0, 0, 0.996211, 0, 0, 0, 3.0271144, -0.02377081, 0.0005732253, 0.024073958)
