@@ -10,6 +10,7 @@ collision_mask = 6
 
 [node name="BackWallMesh" parent="." index="0"]
 transform = Transform3D(4.7063756, 0, 0, 0, 4.7063756, 0, 0, 0, 4.7063756, -0.005, 1.992, 0.007)
+cast_shadow = 0
 
 [node name="BackWallCollision" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005270958, 1.9918807, 0.007156372)
