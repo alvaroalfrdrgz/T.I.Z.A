@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ngjdg2snys4"]
+
+[ext_resource type="PackedScene" uid="uid://d4kkaj2v8g5q2" path="res://assets/3d/classroom/clock.glb" id="1_vlc7k"]
+
+[node name="Clock" instance=ExtResource("1_vlc7k")]
+
+[node name="Aguja" parent="." index="0"]
+transform = Transform3D(0.016721088, 0, -0.0019633304, -0.0002918676, 0, -0.11247915, 0, 0.016723635, 0, 0.0002310276, 0.44209474, -0.0027451515)
+
+[node name="Aguja_00" parent="." index="1"]
+transform = Transform3D(-0.00056727615, -3.6929956e-13, -0.17339563, -0.007881378, -1.9987434e-09, 0.012480458, -9.41964e-10, 0.016723635, 1.4877864e-09, 0.0002310276, 0.44209474, -0.0027451515)
+
+[node name="Aguja_002" parent="." index="2"]
+transform = Transform3D(0.0005708102, 2.0213546e-09, 0.23762235, 0.006799637, 3.3046932e-10, -0.019947723, -2.0335778e-10, 0.016723635, -2.8326792e-08, 0.00023114681, 0.44209474, -0.025431097)
+
+[node name="Reloj" parent="." index="3"]
+transform = Transform3D(0.45631465, 0, 0, 0, 0, -0.45631465, 0, 0.45631465, 0, 0.0012332201, 0.44849944, -0.037777483)

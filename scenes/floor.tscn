@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxty41syi87w1"]
 
-[ext_resource type="PackedScene" uid="uid://boihmftoojeth" path="res://assets/3d/classroom/floor.glb" id="1_dmu3r"]
+[ext_resource type="PackedScene" uid="uid://bu6h5nehmh63h" path="res://assets/3d/floor.glb" id="1_dmu3r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ukw5w"]
 size = Vector3(1.9961548, 0.12878418, 1.9945068)
@@ -8,7 +8,7 @@ size = Vector3(1.9961548, 0.12878418, 1.9945068)
 [node name="Floor" instance=ExtResource("1_dmu3r")]
 
 [node name="FloorMesh" parent="." index="0"]
-transform = Transform3D(4.7063756, 0, 0, 0, 4.7063756, 0, 0, 0, 4.7063756, 0.004954338, -0.31224608, 9.536743e-07)
+transform = Transform3D(4.7063756, 0, 0, 0, 4.7063756, 0, 0, 0, 4.7063756, -0.044309616, -0.31236815, -0.020795345)
 
 [node name="FloorCollision" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(4.706375, 0, 0, 0, 4.706375, 0, 0, 0, 4.706375, -0.03597927, -0.3079372, -0.03360796)

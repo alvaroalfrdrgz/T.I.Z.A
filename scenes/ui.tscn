@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://cs262745pgcn6" path="res://shaders/Classroom.gdshader" id="3_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://ctn48337byl50" path="res://assets/ui/Cintra6.png" id="4_gdt2y"]
 [ext_resource type="FontFile" uid="uid://cigpef5wee61e" path="res://assets/fonts/Kidz Block.ttf" id="5_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://d0fvsaqlcyaio" path="res://assets/ui/viewport.png" id="6_8dubc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yev5y"]
 
@@ -59,15 +60,9 @@ colors = PackedColorArray(1, 0.007843138, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p7vwb"]
 gradient = SubResource("Gradient_8dubc")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdt2y"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_8dubc"]
-font = ExtResource("5_wm3ai")
-font_size = 166
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dubc"]
 
 [node name="UI" type="CanvasLayer"]
-scale = Vector2(0.615, 0.615)
-transform = Transform2D(0.615, 0, 0, 0.615, 0, 0)
 script = ExtResource("1_nt7q6")
 
 [node name="ProfessorStats" type="Panel" parent="."]
@@ -76,6 +71,7 @@ anchor_right = 0.523
 anchor_bottom = 0.22000001
 offset_right = 0.8399658
 offset_bottom = 0.39997864
+scale = Vector2(0.615, 0.615)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_yev5y")
 
 [node name="ProfessorName" type="Label" parent="ProfessorStats"]
@@ -150,22 +146,31 @@ fill_mode = 4
 texture_under = SubResource("GradientTexture2D_wm3ai")
 texture_progress = SubResource("GradientTexture2D_p7vwb")
 
-[node name="StudentStats" type="Panel" parent="."]
-visible = false
-offset_left = 2144.7153
-offset_right = 3115.4473
-offset_bottom = 237.39839
-theme_override_styles/panel = SubResource("StyleBoxEmpty_gdt2y")
-
-[node name="StudentName" type="Label" parent="StudentStats"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+[node name="CeckWindows" type="Panel" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -400.0
-offset_top = 21.138214
-offset_right = -10.0
-offset_bottom = 229.13821
-grow_horizontal = 0
-text = "name"
-label_settings = SubResource("LabelSettings_8dubc")
+anchor_bottom = 1.0
+offset_left = 1146.0
+offset_top = 34.0
+offset_right = -43.99951
+offset_bottom = -596.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8dubc")
+
+[node name="Viewport" type="Sprite2D" parent="CeckWindows"]
+position = Vector2(365, 226)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("6_8dubc")
+
+[node name="StudentCamera" type="SubViewportContainer" parent="CeckWindows"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 724.0
+offset_bottom = 411.0
+
+[node name="CameraViewport" type="SubViewport" parent="CeckWindows/StudentCamera"]
+handle_input_locally = false
+size = Vector2i(720, 405)
+render_target_update_mode = 4

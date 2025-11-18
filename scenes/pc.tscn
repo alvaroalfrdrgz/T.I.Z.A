@@ -1,16 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvryj64l3taxj"]
+[gd_scene load_steps=12 format=3 uid="uid://bvryj64l3taxj"]
 
 [ext_resource type="PackedScene" uid="uid://bga56togdr18a" path="res://assets/3d/classroom/pc.glb" id="1_5rl7t"]
 [ext_resource type="Script" uid="uid://dc1ipyhuhsnkn" path="res://scripts/monitor.gd" id="2_qd3p6"]
+[ext_resource type="Texture2D" uid="uid://ynmfj40jta1d" path="res://assets/programming.png" id="3_o5wjj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2wdt7"]
+viewport_path = NodePath("ScreenViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wdt7"]
 resource_local_to_scene = true
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(2.264654, 2.264654, 2.264654, 1)
+albedo_texture = SubResource("ViewportTexture_2wdt7")
 emission_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o5wjj"]
 resource_local_to_scene = true
-lightmap_size_hint = Vector2i(11, 11)
+lightmap_size_hint = Vector2i(5, 4)
 size = Vector2(0.775, 0.43)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5rl7t"]
@@ -21,6 +26,14 @@ size = Vector3(0.41003513, 0.6082611, 0.71203613)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5wjj"]
 size = Vector3(0.7048799, 0.031354904, 0.33796692)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2wdt7"]
+resource_local_to_scene = true
+size = Vector3(3.9572754, 0.32336426, 3.2177734)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_heffb"]
+resource_local_to_scene = true
+size = Vector3(0.53449404, 0.32336426, 1)
 
 [node name="Pc" instance=ExtResource("1_5rl7t")]
 script = ExtResource("2_qd3p6")
@@ -41,7 +54,12 @@ material_overlay = SubResource("StandardMaterial3D_2wdt7")
 mesh = SubResource("PlaneMesh_o5wjj")
 
 [node name="ScreenViewport" type="SubViewport" parent="." index="4"]
-size = Vector2i(128, 72)
+size = Vector2i(320, 180)
+
+[node name="TextureRect" type="TextureRect" parent="ScreenViewport" index="0"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_o5wjj")
 
 [node name="MonitorCollision" type="CollisionShape3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29599762, 0.34172058, -0.19995117)
@@ -69,3 +87,53 @@ light_specular = 0.0
 light_cull_mask = 4293918733
 
 [node name="ColorTimer" type="Timer" parent="." index="9"]
+
+[node name="AreaNear" type="Area3D" parent="." index="10"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="AreaCollision" type="CollisionShape3D" parent="AreaNear" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0025634766, 0.0761112, -0.017089844)
+shape = SubResource("BoxShape3D_2wdt7")
+debug_color = Color(1, 0, 0.03529412, 1)
+
+[node name="AreaDetected" type="Area3D" parent="." index="11"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="AreaCollision" type="CollisionShape3D" parent="AreaDetected" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5309923, 0.0761112, 0.36993408)
+shape = SubResource("BoxShape3D_heffb")
+debug_color = Color(0.91788495, 6.497651e-05, 0.7005552, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." index="12"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.583
+anchor_top = 0.07300001
+anchor_right = 0.91700006
+anchor_bottom = 0.40600002
+offset_left = 0.64001465
+offset_top = 0.15999603
+offset_right = -320.64014
+offset_bottom = -179.48001
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" index="0"]
+handle_input_locally = false
+size = Vector2i(320, 180)
+render_target_update_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport" index="0"]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 319.0
+offset_bottom = 179.0
+texture = ExtResource("3_o5wjj")
+
+[connection signal="body_entered" from="AreaNear" to="." method="_on_area_near_body_entered"]
+[connection signal="body_exited" from="AreaNear" to="." method="_on_area_near_body_exited"]
+[connection signal="body_entered" from="AreaDetected" to="." method="_on_area_near_body_entered"]
+[connection signal="body_exited" from="AreaDetected" to="." method="_on_area_near_body_exited"]

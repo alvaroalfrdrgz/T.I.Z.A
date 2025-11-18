@@ -19,7 +19,6 @@ func _ready() -> void:
 	ui.visible = true
 
 func _process(_delta: float) -> void:
-	#student_name.text = GM.student_name_global
 	cintra_amount.text = "X" + str(GM.cintra)
 	stamina_bar.value = professor.stamina
 	cintra_bar.value = professor.remaining_cintra_time

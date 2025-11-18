@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc0ao4dfe35wg"]
+
+[ext_resource type="PackedScene" uid="uid://lu3q4itsixh2" path="res://assets/3d/library.glb" id="1_0cqvf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4m2s"]
+size = Vector3(0.63482666, 1.1088867, 2.9152832)
+
+[node name="Library" instance=ExtResource("1_0cqvf")]
+
+[node name="Gabeta_002" parent="." index="0"]
+transform = Transform3D(0.3066139, 0, 0, 0, 0.82604975, 0, 0, 0, 0.7327733, 0.06620389, 1.6458182, 1.0288537)
+
+[node name="Gabeta Doble_001" parent="." index="1"]
+transform = Transform3D(0.3066139, 0, 0, 0, 0.82604975, 0, 0, 0, 0.7327733, 0.06701887, 0.54440844, 1.0331156)
+
+[node name="Círculo_002" parent="." index="2"]
+transform = Transform3D(0.12677424, 0, 0, 0, 0.0680738, 0, 0, 0, 0.12677424, 0.049476445, 1.0819854, -0.95985293)
+
+[node name="Curva_Bezier_002" parent="." index="3"]
+transform = Transform3D(-0.005264198, 0, -0.38419148, 0, 0.31459957, 0, 0.3145772, 0, -0.0064291377, -0.2399069, 1.209857, -1.0619547)
+
+[node name="Globe" parent="." index="4"]
+transform = Transform3D(0.0023979815, 0, 0, 0, 0.002201934, -0.00094963226, 0, 0.00094963226, 0.002201934, -0.034424007, 1.5267063, -0.20192742)
+
+[node name="LibraryCollision" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048919678, 0.560791, 0.30358887)
+shape = SubResource("BoxShape3D_m4m2s")
+debug_color = Color(0.27058825, 0.5019608, 1, 1)

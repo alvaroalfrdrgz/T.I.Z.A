@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://brr21ctnm8tna"]
+
+[ext_resource type="PackedScene" uid="uid://cu1b8b3iqcufh" path="res://assets/3d/library2.glb" id="1_fglyk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n5qmb"]
+size = Vector3(1, 0.5151367, 1.3094482)
+
+[node name="Library2" instance=ExtResource("1_fglyk")]
+
+[node name="Gabeta_001" parent="." index="0"]
+transform = Transform3D(0.3066139, 0, 0, 0, 0.82604975, 0, 0, 0, 0.7327733, -0.015785038, 1.4292163, 0.22897422)
+
+[node name="Círculo" parent="." index="1"]
+transform = Transform3D(0.071884915, 0, 0, 0, 0.08213948, 0, 0, 0, 0.071884915, 0.030554414, 1.9957132, -0.19542444)
+
+[node name="Curva_Bezier" parent="." index="2"]
+transform = Transform3D(0.177045, 0, 0, 0, 0.177045, 0, 0, 0, 0.177045, -0.006732881, 2.193453, -0.058458567)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2424316, 0.15472412)
+shape = SubResource("BoxShape3D_n5qmb")
+debug_color = Color(0.078431375, 0.5254902, 1, 1)

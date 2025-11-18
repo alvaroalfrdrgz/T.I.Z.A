@@ -10,8 +10,8 @@ size = Vector3(0.24126434, 0.04864502, 2.2836914)
 
 [node name="Blackboard" instance=ExtResource("1_i3d2x")]
 
-[node name="BlackboardMesh" parent="." index="0"]
-transform = Transform3D(2.2403042, 0, 0, 0, 0.99590516, 0, 0, 0, 0.04546872, -0.004078865, 0.98410654, -0.026770353)
+[node name="Pizzara" parent="." index="0"]
+transform = Transform3D(2.2403042, 0, 0, 0, 0.99590516, 0, 0, 0, 0.04546872, 0.005536318, 0.9625453, -0.025317132)
 
 [node name="BlackboardCollision" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09194946, 1.0356445, -0.027893066)

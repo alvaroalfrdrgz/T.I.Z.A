@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://od08imcf6svb"
-path="res://.godot/imported/window_view.glb-1d1dedb26252bf8e2b99f692c912d7f7.scn"
+uid="uid://cu1b8b3iqcufh"
+path="res://.godot/imported/library2.glb-1e6c030f5723cc72dcfc67f601ef4a19.scn"
 
 [deps]
 
-source_file="res://assets/3d/classroom/window_view.glb"
-dest_files=["res://.godot/imported/window_view.glb-1d1dedb26252bf8e2b99f692c912d7f7.scn"]
+source_file="res://assets/3d/classroom/library2.glb"
+dest_files=["res://.godot/imported/library2.glb-1e6c030f5723cc72dcfc67f601ef4a19.scn"]
 
 [params]
 
-nodes/root_type="Sprite3D"
-nodes/root_name=""
+nodes/root_type="StaticBody3D"
+nodes/root_name="Library2"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

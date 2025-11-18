@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://od08imcf6svb"
-path="res://.godot/imported/window_view.glb-1d1dedb26252bf8e2b99f692c912d7f7.scn"
+uid="uid://d4kkaj2v8g5q2"
+path="res://.godot/imported/clock.glb-540d8a967a4934bb05028758e6166d0f.scn"
 
 [deps]
 
-source_file="res://assets/3d/classroom/window_view.glb"
-dest_files=["res://.godot/imported/window_view.glb-1d1dedb26252bf8e2b99f692c912d7f7.scn"]
+source_file="res://assets/3d/classroom/clock.glb"
+dest_files=["res://.godot/imported/clock.glb-540d8a967a4934bb05028758e6166d0f.scn"]
 
 [params]
 
 nodes/root_type="Sprite3D"
-nodes/root_name=""
+nodes/root_name="Clock"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

@@ -66,9 +66,10 @@ func _unhandled_input(event):
 			if not is_on_left:
 				can_top = false
 				cam_animation.play("alt_side")
+				GM.cam_position = "LEFT"
 				await cam_animation.animation_finished
 				is_on_left = true
-				GM.cam_position = "LEFT"
+				
 				can_top = true
 		if event.is_action_pressed("right"):
 			if is_on_left:

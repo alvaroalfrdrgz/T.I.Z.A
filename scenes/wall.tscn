@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://b114xh3bjsyg3"]
 
-[ext_resource type="PackedScene" uid="uid://dwn38qib27df0" path="res://assets/3d/classroom/wall.glb" id="1_wykyb"]
+[ext_resource type="PackedScene" uid="uid://6lwx4akx0yql" path="res://assets/3d/classroom/wall.glb" id="1_wykyb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wykyb"]
 size = Vector3(9.414101, 3.9835815, 0.61221313)
 
 [node name="MainWall" instance=ExtResource("1_wykyb")]
+collision_mask = 6
 
 [node name="WallMesh" parent="." index="0"]
 transform = Transform3D(4.7063756, 0, 0, 0, 4.7063756, 0, 0, 0, 4.7063756, -0.009, 1.991, -0.026)

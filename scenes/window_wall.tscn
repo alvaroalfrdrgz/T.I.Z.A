@@ -6,6 +6,7 @@
 size = Vector3(9.414101, 3.9835815, 0.61221313)
 
 [node name="WindowWall" instance=ExtResource("1_rcsby")]
+collision_mask = 6
 
 [node name="WindowWallMesh" parent="." index="0"]
 transform = Transform3D(4.7063756, 0, 0, 0, 4.7063756, 0, 0, 0, 4.7063756, 0.049, 2.038, -0.021)
