@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cn7w8ekg5nsr4"]
+[gd_scene load_steps=30 format=3 uid="uid://cn7w8ekg5nsr4"]
 
 [ext_resource type="Script" uid="uid://cj46nyaaxaew2" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://c1ahxw3tr30le" path="res://assets/ui/abraham.png" id="3_gdt2y"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ctn48337byl50" path="res://assets/ui/Cintra6.png" id="4_gdt2y"]
 [ext_resource type="FontFile" uid="uid://cigpef5wee61e" path="res://assets/fonts/Kidz Block.ttf" id="5_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://d0fvsaqlcyaio" path="res://assets/ui/viewport.png" id="6_8dubc"]
+[ext_resource type="FontFile" uid="uid://tyiavpfns3pb" path="res://assets/fonts/ExninjaDemoCaligraphy.ttf" id="7_ktti3"]
+[ext_resource type="Theme" uid="uid://530mfykytx07" path="res://themes/menu.tres" id="7_p7vwb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yev5y"]
 
@@ -62,15 +64,115 @@ gradient = SubResource("Gradient_8dubc")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dubc"]
 
+[sub_resource type="Animation" id="Animation_ktti3"]
+resource_name = "INIT"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1146, -457.765)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p7vwb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1146, 34)]
+}
+
+[sub_resource type="Animation" id="Animation_8dubc"]
+resource_name = "appears"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1146, -457.765), Vector2(1146, 34)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ktti3"]
+_data = {
+&"INIT": SubResource("Animation_ktti3"),
+&"RESET": SubResource("Animation_p7vwb"),
+&"appears": SubResource("Animation_8dubc")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_cgfq5"]
+font = ExtResource("7_ktti3")
+font_size = 26
+font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ktti3"]
+font = ExtResource("7_ktti3")
+font_size = 22
+font_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_nt7q6")
 
 [node name="ProfessorStats" type="Panel" parent="."]
 anchors_preset = -1
-anchor_right = 0.523
-anchor_bottom = 0.22000001
-offset_right = 0.8399658
-offset_bottom = 0.39997864
+anchor_right = 0.32200003
+anchor_bottom = 0.136
+offset_right = 386.75995
+offset_bottom = 91.119995
 scale = Vector2(0.615, 0.615)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_yev5y")
 
@@ -152,8 +254,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1146.0
 offset_top = 34.0
-offset_right = -43.99951
-offset_bottom = -596.0
+offset_right = -43.99524
+offset_bottom = -595.99963
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8dubc")
@@ -165,12 +267,59 @@ texture = ExtResource("6_8dubc")
 
 [node name="StudentCamera" type="SubViewportContainer" parent="CeckWindows"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 6.0
-offset_right = 724.0
-offset_bottom = 411.0
+offset_left = 66.855
+offset_top = 26.0
+offset_right = 662.855
+offset_bottom = 364.0
 
 [node name="CameraViewport" type="SubViewport" parent="CeckWindows/StudentCamera"]
 handle_input_locally = false
-size = Vector2i(720, 405)
+size = Vector2i(596, 338)
 render_target_update_mode = 4
+
+[node name="CheckWindowsAnimation" type="AnimationPlayer" parent="CeckWindows"]
+libraries = {
+&"": SubResource("AnimationLibrary_ktti3")
+}
+
+[node name="NameTitle" type="Label" parent="CeckWindows"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 380.0
+offset_right = 172.0
+offset_bottom = 424.0
+text = "Nombre:"
+label_settings = SubResource("LabelSettings_cgfq5")
+
+[node name="Name" type="Label" parent="CeckWindows"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 411.0
+offset_right = 329.0
+offset_bottom = 443.0
+text = "Alvaro Alfonso Rodriguez"
+label_settings = SubResource("LabelSettings_ktti3")
+
+[node name="ExitButton" type="Button" parent="CeckWindows"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 28.0
+offset_bottom = 22.0
+size_flags_horizontal = 3
+theme = ExtResource("7_p7vwb")
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="CeckWindows"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 385.0
+offset_right = 699.0
+offset_bottom = 445.0
+
+[node name="CheckButton" type="Button" parent="CeckWindows/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_p7vwb")
+text = "CHECK"
+
+[connection signal="pressed" from="CeckWindows/ExitButton" to="." method="_on_exit_button_pressed"]

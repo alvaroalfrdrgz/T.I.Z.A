@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://btym33fgd4sw0"]
+[gd_scene load_steps=54 format=3 uid="uid://btym33fgd4sw0"]
 
 [ext_resource type="Script" uid="uid://l4mf32wbowge" path="res://scripts/classroom.gd" id="1_hro1x"]
 [ext_resource type="Texture2D" uid="uid://c2opx0kjaoy37" path="res://assets/360_F_397880140_pcEu3Jk9x7RGY142X9enJjF6uE36KDjz.jpg" id="2_6matg"]
@@ -9,15 +9,24 @@
 [ext_resource type="PackedScene" uid="uid://ckfvvig8rmusg" path="res://scenes/table.tscn" id="7_1bbs3"]
 [ext_resource type="PackedScene" uid="uid://bvryj64l3taxj" path="res://scenes/pc.tscn" id="8_65hgp"]
 [ext_resource type="PackedScene" uid="uid://7jie5r7h3a2m" path="res://scenes/chair.tscn" id="9_rnpo6"]
+[ext_resource type="Script" uid="uid://brtepr1hq6h5l" path="res://scripts/monitors/monitor1.gd" id="9_s13ru"]
 [ext_resource type="PackedScene" uid="uid://dnmal60bu8qkx" path="res://scenes/door.tscn" id="10_kpm8s"]
+[ext_resource type="Script" uid="uid://cmojynwjq0pdk" path="res://scripts/monitors/monitor2.gd" id="10_nsr50"]
+[ext_resource type="Script" uid="uid://cuni3d44epvxe" path="res://scripts/monitors/monitor3.gd" id="11_5q2h4"]
 [ext_resource type="PackedScene" uid="uid://d2ksphkaeouwh" path="res://scenes/players/student_base.tscn" id="11_gcrv1"]
 [ext_resource type="PackedScene" uid="uid://bwhxrfa8kwvaw" path="res://scenes/column.tscn" id="12_hpf0w"]
+[ext_resource type="Script" uid="uid://e8v7fdk4kq6s" path="res://scripts/monitors/monitor4.gd" id="12_q783l"]
+[ext_resource type="Script" uid="uid://b4g2cbo7r6vv3" path="res://scripts/monitors/monitor5.gd" id="13_007gu"]
 [ext_resource type="PackedScene" uid="uid://b114xh3bjsyg3" path="res://scenes/wall.tscn" id="13_s13ru"]
+[ext_resource type="Script" uid="uid://dffclr6r2foeh" path="res://scripts/monitors/monitor6.gd" id="14_ffp5y"]
 [ext_resource type="PackedScene" uid="uid://dqs4rsodfmgoc" path="res://scenes/blackboard.tscn" id="14_nsr50"]
 [ext_resource type="PackedScene" uid="uid://ryjrppobn1jl" path="res://scenes/split.tscn" id="15_5q2h4"]
+[ext_resource type="Script" uid="uid://bwikur5u1qc2x" path="res://scripts/monitors/monitor7.gd" id="15_ej5ul"]
 [ext_resource type="PackedScene" uid="uid://1ngjdg2snys4" path="res://scenes/clock.tscn" id="16_gcrv1"]
+[ext_resource type="Script" uid="uid://cogw4ak3numpd" path="res://scripts/monitors/monitor8.gd" id="16_ivw7p"]
 [ext_resource type="PackedScene" uid="uid://cheo7ufr8s743" path="res://scenes/back_wall.tscn" id="16_q783l"]
 [ext_resource type="PackedScene" uid="uid://tbsi8317a3bs" path="res://scenes/window_wall.tscn" id="17_007gu"]
+[ext_resource type="Script" uid="uid://do7iu8au1qt21" path="res://scripts/monitors/monitor9.gd" id="17_xufwn"]
 [ext_resource type="PackedScene" uid="uid://bthw1ofk0lpa8" path="res://scenes/curtains.tscn" id="18_ffp5y"]
 [ext_resource type="PackedScene" uid="uid://dwvf8a0pusurd" path="res://scenes/window_view.tscn" id="19_ej5ul"]
 [ext_resource type="PackedScene" uid="uid://c5bt78s602hh0" path="res://scenes/door_wall.tscn" id="20_ivw7p"]
@@ -415,30 +424,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35714722)
 
 [node name="Pc1" parent="Tables and Pcs" instance=ExtResource("8_65hgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1068969, 0.72802734, -1.9546467)
+script = ExtResource("9_s13ru")
 
 [node name="Pc2" parent="Tables and Pcs" instance=ExtResource("8_65hgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0970068, 0.72802734, -1.9546467)
+script = ExtResource("10_nsr50")
 
 [node name="Pc3" parent="Tables and Pcs" instance=ExtResource("8_65hgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9128838, 0.72802734, -1.9546467)
+script = ExtResource("11_5q2h4")
 
 [node name="Pc4" parent="Tables and Pcs" instance=ExtResource("8_65hgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1068969, 0.72802734, 0.41182458)
+script = ExtResource("12_q783l")
 
 [node name="Pc5" parent="Tables and Pcs" instance=ExtResource("8_65hgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0970068, 0.72802734, 0.41182458)
+script = ExtResource("13_007gu")
 
 [node name="Pc6" parent="Tables and Pcs" instance=ExtResource("8_65hgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9128838, 0.72802734, 0.41182458)
+script = ExtResource("14_ffp5y")
 
 [node name="Pc7" parent="Tables and Pcs" instance=ExtResource("8_65hgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1068969, 0.72802734, 3.045104)
+script = ExtResource("15_ej5ul")
 
 [node name="Pc8" parent="Tables and Pcs" instance=ExtResource("8_65hgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0970068, 0.72802734, 3.045104)
+script = ExtResource("16_ivw7p")
 
 [node name="Pc9" parent="Tables and Pcs" instance=ExtResource("8_65hgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9128838, 0.72802734, 3.045104)
+script = ExtResource("17_xufwn")
 
 [node name="Chairs" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.61066985)
@@ -595,6 +613,18 @@ mesh = SubResource("PlaneMesh_8nluh")
 
 [node name="UI" parent="." instance=ExtResource("22_7kjdo")]
 
+[node name="StudentCamera" parent="UI/CeckWindows" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.033
+anchor_right = 0.9480001
+anchor_bottom = 0.864
+offset_left = 34.774776
+offset_top = 11.149988
+offset_right = -29.149536
+offset_bottom = -24.800323
+
 [node name="HidenCameras" type="Node3D" parent="UI/CeckWindows/StudentCamera" index="0"]
 
 [node name="Cameras" type="Node3D" parent="UI/CeckWindows/StudentCamera/CameraViewport" index="0"]
@@ -603,7 +633,6 @@ mesh = SubResource("PlaneMesh_8nluh")
 transform = Transform3D(0.8290376, -0.20039684, 0.5220515, 0, 0.93358046, 0.35836798, -0.5591929, -0.29710054, 0.7739733, -2.1888433, 1.471, -0.283)
 cull_mask = 1048573
 projection = 1
-near = 0.001
 far = 2.09
 
 [node name="CamTable2" type="Camera3D" parent="UI/CeckWindows/StudentCamera/CameraViewport/Cameras"]
@@ -621,7 +650,7 @@ near = 0.001
 far = 2.09
 
 [node name="CamTable4" type="Camera3D" parent="UI/CeckWindows/StudentCamera/CameraViewport/Cameras"]
-transform = Transform3D(0.8290376, -0.20039684, 0.5220515, 0, 0.93358046, 0.35836798, -0.5591929, -0.29710054, 0.7739733, 3.831873, 1.471, 2.2128496)
+transform = Transform3D(0.8290376, -0.20039684, 0.5220515, 0, 0.93358046, 0.35836798, -0.5591929, -0.29710054, 0.7739733, -2.132, 1.471, 2.213)
 cull_mask = 1048573
 projection = 1
 near = 0.001
@@ -635,7 +664,7 @@ near = 0.001
 far = 2.09
 
 [node name="CamTable6" type="Camera3D" parent="UI/CeckWindows/StudentCamera/CameraViewport/Cameras"]
-transform = Transform3D(0.8290376, -0.20039684, 0.5220515, 0, 0.93358046, 0.35836798, -0.5591929, -0.29710054, 0.7739733, -2.13175, 1.471, 2.2128496)
+transform = Transform3D(0.8290376, -0.20039684, 0.5220515, 0, 0.93358046, 0.35836798, -0.5591929, -0.29710054, 0.7739733, 3.832, 1.471, 2.213)
 cull_mask = 1048573
 projection = 1
 near = 0.001

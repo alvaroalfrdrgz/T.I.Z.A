@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://530mfykytx07"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://530mfykytx07"]
 
 [ext_resource type="FontFile" uid="uid://b5gbbtsghbu2j" path="res://assets/fonts/Marker-Regular.otf" id="1_xavh1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xavh1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6tgry"]
 
@@ -12,13 +14,15 @@
 
 [resource]
 default_font = ExtResource("1_xavh1")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.5171839, 0.5171848, 0.51718396, 0.5019608)
 Button/colors/font_hover_color = Color(0.78, 0.78, 0.78, 1)
 Button/colors/font_hover_pressed_color = Color(0.73300546, 0.73300546, 0.7330051, 1)
-Button/colors/font_pressed_color = Color(0.11764706, 0.3019608, 0.05882353, 1)
-Button/font_sizes/font_size = 100
+Button/colors/font_pressed_color = Color(0.1447609, 6.738305e-07, 0.74127424, 1)
+Button/font_sizes/font_size = 38
 Button/fonts/font = ExtResource("1_xavh1")
-Button/styles/disabled = SubResource("StyleBoxEmpty_6tgry")
-Button/styles/focus = null
+Button/styles/disabled = SubResource("StyleBoxEmpty_xavh1")
+Button/styles/focus = SubResource("StyleBoxEmpty_6tgry")
 Button/styles/hover = SubResource("StyleBoxEmpty_im3bc")
 Button/styles/normal = SubResource("StyleBoxEmpty_pw0cd")
 Button/styles/pressed = SubResource("StyleBoxEmpty_rukvw")

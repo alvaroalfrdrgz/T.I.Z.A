@@ -1,10 +1,11 @@
+class_name Monitor
 extends StaticBody3D
 
 @export var COLORS: Array[Color] = [Color.ORANGE_RED, Color.ROYAL_BLUE, Color.LIME_GREEN]
 
 var detected: bool = false
 var near: bool = false
-
+var pc_number: String = ""
 @onready var screen: MeshInstance3D = $Screen
 @onready var screen_light: OmniLight3D = $ScreenLight
 @onready var color_timer: Timer = $ColorTimer
@@ -39,11 +40,14 @@ var near: bool = false
 func _on_area_near_body_entered(body: Node3D) -> void:
 	if body.is_in_group("professor"):
 		near = true
-		min_time = 0.1
-		max_time = 0.3
-
 func _on_area_near_body_exited(body: Node3D) -> void:
 	if body.is_in_group("professor"):
 		near = false
-		min_time = 5.5
-		max_time = 10.5
+		
+func _on_revision_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("professor"):
+		GM.in_revision_area = true
+		GM.active_camera = "cam" + pc_number
+func _on_revision_area_body_exited(body: Node3D) -> void:
+	if body.is_in_group("professor"):
+		GM.in_revision_area = false

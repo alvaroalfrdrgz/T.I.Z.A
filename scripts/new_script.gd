@@ -39,7 +39,7 @@ func _physics_process(delta):
 
 	stamina = clamp(stamina, min_stamina, max_stamina)
 	lost_stamina = 8.0 if stamina > 20 else 4.0
-	if is_walking and can_walk and  not GM.checking:
+	if is_walking and can_walk:
 		if !GM.cintra_driked:
 			stamina -= lost_stamina * delta
 		else:
@@ -55,15 +55,14 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down")\
 	or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		is_walking = true
-		GM.can_check = false
 	else:
 		is_walking = false
-		GM.can_check = true
 		
 	if is_sitting or GM.checking:
 		return
 
 	var direction = Vector3.ZERO
+	print(direction)
 	if GM.cintra_driked:
 		speed = 2.0
 		anim_player.speed_scale = 2
@@ -89,10 +88,10 @@ func _physics_process(delta):
 	
 	velocity = direction * velocidad
 	
-	#if direction.length() > 0:
-		#is_walking = true
-	#else:
-		#is_walking = false
+	if direction.length() > 0:
+		is_walking = true
+	else:
+		is_walking = false
 	
 	if Input.is_action_just_released("item"):
 		if !GM.cintra_driked and GM.cintra >0:
@@ -147,6 +146,7 @@ func actualizar_animacion():
 		anim_player.play("End_Walk")
 		#anim_player.stop()
 
+var light_on := false
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("sit"):
 		if is_walking:
@@ -166,3 +166,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			professor_sit_collision.disabled = true
 			await anim_player.animation_finished
 			is_sitting = false
+		
+	if event.is_action_pressed("skill"):
+		if light_on:
+			omni_light_3d.light_color = Color("BLACK")
+			light_on = false
+		else:
+			omni_light_3d.light_color = Color("WHite")
+			light_on = true
+			
+@onready var omni_light_3d: SpotLight3D = $SpotLight3D

@@ -16,8 +16,3 @@ func _ready():
 		return
 	
 	print("Mesa " + name + " conectada con PC " + pc_name)
-
-#func _on_interaction_area_body_entered(body: Node3D) -> void:
-	#if body.is_in_group("professor"):
-		#if 
-		
