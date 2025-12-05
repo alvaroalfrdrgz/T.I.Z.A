@@ -2,13 +2,14 @@ class_name GameManager
 extends Node
 
 #region variables guardables
-var reputation : int = 55
+var reputation : int = 50
 var cintra : int = 3
 var money : float = 0
 var day : int = 1
 #endregion
 
 var game_ended: bool = false
+var visible_reputation : bool = false
 
 var cintra_driked: bool = false
 var student_name_global: String = ""

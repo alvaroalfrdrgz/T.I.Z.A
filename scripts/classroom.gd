@@ -62,6 +62,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	if event.is_action_pressed("ui_accept"):
+		GM.game_ended = true
 		end_ui.visible = true
 		get_tree().paused = true
 

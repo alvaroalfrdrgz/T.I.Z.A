@@ -40,6 +40,7 @@ resource_local_to_scene = true
 size = Vector3(0.7026718, 0.32336426, 0.4744873)
 
 [node name="Pc" instance=ExtResource("1_5rl7t")]
+process_mode = 3
 script = ExtResource("2_qd3p6")
 
 [node name="ComputerMesh" parent="." index="0"]

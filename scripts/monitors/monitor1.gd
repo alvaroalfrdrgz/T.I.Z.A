@@ -57,18 +57,28 @@ func _ready() -> void:
 	change_screen_texture()
 	set_random_timer()
 
-func _process(_delta: float) -> void:
+func _input(event: InputEvent) -> void:
 	if GM.game_ended:
-		if already_failure:
-			if record["ai_times"] > 0 and record["ai_times"] <= 2:
-				GM.reputation += 2
-			elif record["ai_times"] > 2:
-				GM.reputation += 4
-		else:
-			if record["ai_times"] > 0 and record["ai_times"] <= 2:
-				GM.reputation -= 2
-			elif record["ai_times"] > 2:
-				GM.reputation -= 4
+		if event.is_action_pressed("interact"):
+			if GM.visible_reputation == true:
+				return
+			GM.visible_reputation = true
+			if GM.student1_strikes > 1:
+				if record["ai_times"] > 0 and record["ai_times"] <= 2:
+					GM.reputation += 2
+				elif record["ai_times"] > 2:
+					GM.reputation += 4
+			elif GM.student1_strikes == 1:
+				if record["ai_times"] > 0 and record["ai_times"] <= 2:
+					GM.reputation += 1
+				elif record["ai_times"] > 2:
+					GM.reputation += 4
+			elif GM.student1_strikes < 1:
+				if record["ai_times"] > 0 and record["ai_times"] <= 2:
+					GM.reputation -= 6
+				elif record["ai_times"] > 2:
+					GM.reputation -= 8
+				
 
 func change_screen_texture():
 	var screen_number: int = randi_range(0, 9)
