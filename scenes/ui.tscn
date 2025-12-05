@@ -172,6 +172,7 @@ offset_left = 16.0
 offset_top = -18.0
 offset_right = 80.0
 offset_bottom = 46.0
+step = 0.0
 fill_mode = 4
 radial_initial_angle = 11.0
 radial_fill_degrees = 127.5
