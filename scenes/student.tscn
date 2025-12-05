@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnrbjh7rt4tbh"]
 
-[ext_resource type="PackedScene" uid="uid://dpq6hnl7yvbaf" path="res://assets/3d/player/student.glb" id="1_4orpo"]
-[ext_resource type="Script" uid="uid://d0grda2j8wnks" path="res://scripts/students/student.gd" id="2_4orpo"]
+[ext_resource type="PackedScene" uid="uid://dpq6hnl7yvbaf" path="res://assets/3d/Nueva carpeta (2)/student.glb" id="1_4orpo"]
+[ext_resource type="Script" uid="uid://d0grda2j8wnks" path="res://scripts/student.gd" id="2_4orpo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4orpo"]
 radius = 1.7753906

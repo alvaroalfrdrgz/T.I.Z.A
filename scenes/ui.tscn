@@ -1,66 +1,29 @@
-[gd_scene load_steps=30 format=3 uid="uid://cn7w8ekg5nsr4"]
+[gd_scene load_steps=29 format=3 uid="uid://cn7w8ekg5nsr4"]
 
 [ext_resource type="Script" uid="uid://cj46nyaaxaew2" path="res://scripts/ui.gd" id="1_nt7q6"]
-[ext_resource type="Texture2D" uid="uid://c1ahxw3tr30le" path="res://assets/ui/abraham.png" id="3_gdt2y"]
-[ext_resource type="Shader" uid="uid://cs262745pgcn6" path="res://shaders/Classroom.gdshader" id="3_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://8racf7vdha0k" path="res://assets/ui/professor_stats/professor_background.png" id="3_cof4p"]
 [ext_resource type="Texture2D" uid="uid://ctn48337byl50" path="res://assets/ui/Cintra6.png" id="4_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://dosstixyhmsw8" path="res://assets/ui/professor_stats/stamina/under.png" id="4_jkdwc"]
+[ext_resource type="Texture2D" uid="uid://d1acpw20g0xlv" path="res://assets/ui/professor_stats/stamina/over.png" id="5_rlppe"]
 [ext_resource type="FontFile" uid="uid://cigpef5wee61e" path="res://assets/fonts/Kidz Block.ttf" id="5_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://d0fvsaqlcyaio" path="res://assets/ui/viewport.png" id="6_8dubc"]
-[ext_resource type="FontFile" uid="uid://tyiavpfns3pb" path="res://assets/fonts/ExninjaDemoCaligraphy.ttf" id="7_ktti3"]
+[ext_resource type="Texture2D" uid="uid://b76xewjml7jg1" path="res://assets/ui/professor_stats/item/under.png" id="6_8k7j3"]
+[ext_resource type="Texture2D" uid="uid://2jx3luxplauu" path="res://assets/ui/professor_stats/stamina/progress.png" id="6_ycmcx"]
+[ext_resource type="Texture2D" uid="uid://b0ps5kyvjqyqk" path="res://assets/ui/professor_stats/item/over.png" id="7_jkdwc"]
 [ext_resource type="Theme" uid="uid://530mfykytx07" path="res://themes/menu.tres" id="7_p7vwb"]
+[ext_resource type="Texture2D" uid="uid://dygvvrow1v3tx" path="res://assets/ui/professor_stats/item/progress.png" id="8_rlppe"]
+[ext_resource type="Texture2D" uid="uid://bh2c0hygrpjl0" path="res://assets/ui/professor_stats/item/item_back.png" id="9_qsv74"]
+[ext_resource type="Texture2D" uid="uid://ckf85wbxcyvkg" path="res://assets/ui/professor_stats/item/one_item_remain.png" id="12_8k7j3"]
+[ext_resource type="Texture2D" uid="uid://bcuhrracqx818" path="res://assets/ui/professor_stats/item/two_item_remain.png" id="13_jkdwc"]
+[ext_resource type="Texture2D" uid="uid://x044a6gq0cuo" path="res://assets/ui/professor_stats/item/three_item_remain.png" id="14_rlppe"]
+[ext_resource type="Texture2D" uid="uid://cxwml3t3fkcq0" path="res://assets/ui/professor_stats/item/four_item_remain.png" id="15_ycmcx"]
+[ext_resource type="FontFile" uid="uid://drsi2osf4btot" path="res://assets/fonts/KGBlankSpaceSolid.ttf" id="17_8k7j3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yev5y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
 font = ExtResource("5_wm3ai")
 font_size = 128
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dubc"]
-shader = ExtResource("3_wm3ai")
-
-[sub_resource type="Gradient" id="Gradient_wm3ai"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8dubc"]
-gradient = SubResource("Gradient_wm3ai")
-width = 537
-height = 70
-
-[sub_resource type="Gradient" id="Gradient_p7vwb"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.46599817, 0.7659561, 0.99999994, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ktti3"]
-gradient = SubResource("Gradient_p7vwb")
-width = 537
-height = 70
-
-[sub_resource type="LabelSettings" id="LabelSettings_wm3ai"]
-font = ExtResource("5_wm3ai")
-font_size = 66
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_yev5y"]
-font = ExtResource("5_wm3ai")
-font_size = 777
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p7vwb"]
-shader = ExtResource("3_wm3ai")
-
-[sub_resource type="Gradient" id="Gradient_gdt2y"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wm3ai"]
-gradient = SubResource("Gradient_gdt2y")
-
-[sub_resource type="Gradient" id="Gradient_8dubc"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 0.007843138, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p7vwb"]
-gradient = SubResource("Gradient_8dubc")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dubc"]
 
@@ -155,28 +118,102 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_cgfq5"]
-font = ExtResource("7_ktti3")
-font_size = 26
+font = ExtResource("17_8k7j3")
+font_size = 32
 font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ktti3"]
-font = ExtResource("7_ktti3")
-font_size = 22
+font = ExtResource("17_8k7j3")
+font_size = 25
 font_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8k7j3"]
+font = ExtResource("17_8k7j3")
+font_size = 27
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_nt7q6")
 
 [node name="ProfessorStats" type="Panel" parent="."]
 anchors_preset = -1
-anchor_right = 0.32200003
-anchor_bottom = 0.136
-offset_right = 386.75995
-offset_bottom = 91.119995
-scale = Vector2(0.615, 0.615)
+anchor_left = 0.008
+anchor_top = 0.020000001
+anchor_right = 0.22200002
+anchor_bottom = 0.279
+offset_left = 0.6400013
+offset_top = 0.39999962
+offset_right = -0.24002075
+offset_bottom = -0.32000732
 theme_override_styles/panel = SubResource("StyleBoxEmpty_yev5y")
 
+[node name="ProfessorBack" type="TextureRect" parent="ProfessorStats"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -18.000002
+offset_right = 316.0
+offset_bottom = 282.0
+texture = ExtResource("3_cof4p")
+
+[node name="StaminaBar" type="TextureProgressBar" parent="ProfessorStats"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -18.0
+offset_right = 316.0
+offset_bottom = 282.0
+step = 0.0
+fill_mode = 5
+texture_under = ExtResource("4_jkdwc")
+texture_over = ExtResource("5_rlppe")
+texture_progress = ExtResource("6_ycmcx")
+
+[node name="CintraBar" type="TextureProgressBar" parent="ProfessorStats"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -18.0
+offset_right = 80.0
+offset_bottom = 46.0
+fill_mode = 4
+radial_initial_angle = 11.0
+radial_fill_degrees = 127.5
+texture_under = ExtResource("6_8k7j3")
+texture_over = ExtResource("7_jkdwc")
+texture_progress = ExtResource("8_rlppe")
+
+[node name="Item1Back" type="TextureRect" parent="ProfessorStats"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = -5.000002
+offset_right = 368.0
+offset_bottom = 75.0
+texture = ExtResource("9_qsv74")
+
+[node name="Item2Back" type="TextureRect" parent="ProfessorStats"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 80.0
+offset_right = 398.0
+offset_bottom = 160.0
+texture = ExtResource("9_qsv74")
+
+[node name="Item3Back" type="TextureRect" parent="ProfessorStats"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 169.0
+offset_right = 380.0
+offset_bottom = 249.0
+texture = ExtResource("9_qsv74")
+
+[node name="CintraPicture" type="TextureRect" parent="ProfessorStats"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 2.999998
+offset_right = 424.0
+offset_bottom = 131.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_gdt2y")
+
 [node name="ProfessorName" type="Label" parent="ProfessorStats"]
+visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = 226.0
@@ -186,67 +223,37 @@ offset_bottom = 154.0
 text = "Profesor"
 label_settings = SubResource("LabelSettings_gdt2y")
 
-[node name="ProfessorPicture" type="TextureRect" parent="ProfessorStats"]
-material = SubResource("ShaderMaterial_8dubc")
+[node name="OneItemRemain" type="TextureRect" parent="ProfessorStats"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 13.0
-offset_right = 2666.5
-offset_bottom = 2675.5
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_gdt2y")
+offset_left = 283.0
+offset_top = -10.000002
+offset_right = 373.0
+offset_bottom = 80.0
+texture = ExtResource("12_8k7j3")
 
-[node name="StaminaBar" type="TextureProgressBar" parent="ProfessorStats"]
+[node name="TwoItemRemain" type="TextureRect" parent="ProfessorStats"]
 layout_mode = 0
-offset_left = 222.0
-offset_top = 144.0
-offset_right = 759.0
-offset_bottom = 214.0
-texture_under = SubResource("GradientTexture2D_8dubc")
-texture_progress = SubResource("GradientTexture2D_ktti3")
+offset_left = 283.0
+offset_top = -10.000002
+offset_right = 373.0
+offset_bottom = 80.0
+texture = ExtResource("13_jkdwc")
 
-[node name="StaminaText" type="Label" parent="ProfessorStats"]
-texture_filter = 1
+[node name="ThreeItemRemain" type="TextureRect" parent="ProfessorStats"]
 layout_mode = 0
-offset_left = 356.0
-offset_top = 141.0
-offset_right = 596.0
-offset_bottom = 224.0
-text = "STAMINA"
-label_settings = SubResource("LabelSettings_wm3ai")
+offset_left = 283.0
+offset_top = -10.000002
+offset_right = 373.0
+offset_bottom = 80.0
+texture = ExtResource("14_rlppe")
 
-[node name="CintraPicture" type="TextureRect" parent="ProfessorStats"]
-texture_filter = 1
+[node name="FourItemRemain" type="TextureRect" parent="ProfessorStats"]
 layout_mode = 0
-offset_left = 725.00006
-offset_top = 3.0
-offset_right = 853.00006
-offset_bottom = 131.0
-scale = Vector2(1.73, 1.73)
-texture = ExtResource("4_gdt2y")
-
-[node name="CintraAmount" type="Label" parent="ProfessorStats"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 906.9999
-offset_top = 26.999996
-offset_right = 2340.0
-offset_bottom = 929.0
-scale = Vector2(0.085, 0.085)
-text = "X0"
-label_settings = SubResource("LabelSettings_yev5y")
-
-[node name="CintraBar" type="TextureProgressBar" parent="ProfessorStats"]
-material = SubResource("ShaderMaterial_p7vwb")
-layout_mode = 0
-offset_left = 898.00006
-offset_top = 104.0
-offset_right = 962.00006
-offset_bottom = 168.0
-scale = Vector2(1.48, 1.48)
-fill_mode = 4
-texture_under = SubResource("GradientTexture2D_wm3ai")
-texture_progress = SubResource("GradientTexture2D_p7vwb")
+offset_left = 283.0
+offset_top = -10.000002
+offset_right = 373.0
+offset_bottom = 80.0
+texture = ExtResource("15_ycmcx")
 
 [node name="CeckWindows" type="Panel" parent="."]
 anchors_preset = 15
@@ -260,22 +267,27 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8dubc")
 
-[node name="Viewport" type="Sprite2D" parent="CeckWindows"]
-position = Vector2(365, 226)
-scale = Vector2(1.0000001, 1.0000001)
-texture = ExtResource("6_8dubc")
-
 [node name="StudentCamera" type="SubViewportContainer" parent="CeckWindows"]
 layout_mode = 0
-offset_left = 66.855
-offset_top = 26.0
-offset_right = 662.855
-offset_bottom = 364.0
+offset_left = 27.0
+offset_top = 74.0
+offset_right = 447.0
+offset_bottom = 412.0
+pivot_offset = Vector2(210, 169)
 
 [node name="CameraViewport" type="SubViewport" parent="CeckWindows/StudentCamera"]
 handle_input_locally = false
-size = Vector2i(596, 338)
+size = Vector2i(430, 315)
 render_target_update_mode = 4
+
+[node name="Viewport" type="TextureRect" parent="CeckWindows"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -4.0
+offset_right = 727.0
+offset_bottom = 446.0
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("6_8dubc")
 
 [node name="CheckWindowsAnimation" type="AnimationPlayer" parent="CeckWindows"]
 libraries = {
@@ -284,20 +296,20 @@ libraries = {
 
 [node name="NameTitle" type="Label" parent="CeckWindows"]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 380.0
-offset_right = 172.0
-offset_bottom = 424.0
-text = "Nombre:"
+offset_left = 509.0
+offset_top = 223.0
+offset_right = 651.0
+offset_bottom = 267.0
+text = "Nombre"
 label_settings = SubResource("LabelSettings_cgfq5")
 
-[node name="Name" type="Label" parent="CeckWindows"]
+[node name="StudentName" type="Label" parent="CeckWindows"]
 layout_mode = 0
-offset_left = 70.0
-offset_top = 411.0
-offset_right = 329.0
-offset_bottom = 443.0
-text = "Alvaro Alfonso Rodriguez"
+offset_left = 512.0
+offset_top = 259.0
+offset_right = 639.0
+offset_bottom = 293.0
+text = "Abraham"
 label_settings = SubResource("LabelSettings_ktti3")
 
 [node name="ExitButton" type="Button" parent="CeckWindows"]
@@ -311,15 +323,28 @@ theme = ExtResource("7_p7vwb")
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="CeckWindows"]
 layout_mode = 0
-offset_left = 336.0
-offset_top = 385.0
-offset_right = 699.0
-offset_bottom = 445.0
+offset_left = 496.17
+offset_top = 325.57
+offset_right = 662.1704
+offset_bottom = 393.57
 
-[node name="CheckButton" type="Button" parent="CeckWindows/ButtonsContainer"]
+[node name="StrikeButton" type="Button" parent="CeckWindows/ButtonsContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 theme = ExtResource("7_p7vwb")
-text = "CHECK"
+theme_override_colors/font_color = Color(0, 0, 0, 0.6901961)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.3882353)
+text = "Strike"
+
+[node name="Message" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 1037.0
+offset_right = 445.0
+offset_bottom = 1069.0
+text = "El estudiante \"\" ha sido suspendido"
+label_settings = SubResource("LabelSettings_8k7j3")
 
 [connection signal="pressed" from="CeckWindows/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CeckWindows/ButtonsContainer/StrikeButton" to="." method="_on_strike_button_pressed"]

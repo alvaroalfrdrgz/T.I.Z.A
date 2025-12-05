@@ -62,7 +62,6 @@ func _physics_process(delta):
 		return
 
 	var direction = Vector3.ZERO
-	print(direction)
 	if GM.cintra_driked:
 		speed = 2.0
 		anim_player.speed_scale = 2

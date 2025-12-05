@@ -1,8 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvryj64l3taxj"]
+[gd_scene load_steps=16 format=3 uid="uid://bvryj64l3taxj"]
 
 [ext_resource type="PackedScene" uid="uid://bga56togdr18a" path="res://assets/3d/classroom/pc.glb" id="1_5rl7t"]
 [ext_resource type="Script" uid="uid://dc1ipyhuhsnkn" path="res://scripts/monitor.gd" id="2_qd3p6"]
-[ext_resource type="Texture2D" uid="uid://ynmfj40jta1d" path="res://assets/programming.png" id="3_o5wjj"]
+[ext_resource type="Texture2D" uid="uid://nkni3qwt0ay2" path="res://assets/ui/artificial_intelligence.png" id="3_o5wjj"]
+[ext_resource type="Texture2D" uid="uid://bnmwthwugidm6" path="res://assets/ui/programming_screen.png" id="4_2wdt7"]
+[ext_resource type="Texture2D" uid="uid://4cu87xbb1e8v" path="res://assets/ui/online_videos.png" id="5_heffb"]
+[ext_resource type="Texture2D" uid="uid://d01tj80ooymm0" path="res://assets/ui/wallpaper.png" id="6_uuu8i"]
+[ext_resource type="VideoStream" uid="uid://cw3q3sw43o5es" path="res://assets/ui/waos_intro.ogv" id="7_pghs8"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_2wdt7"]
 viewport_path = NodePath("ScreenViewport")
@@ -33,7 +37,7 @@ size = Vector3(3.9572754, 0.32336426, 3.2177734)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_heffb"]
 resource_local_to_scene = true
-size = Vector3(0.53449404, 0.32336426, 1)
+size = Vector3(0.7026718, 0.32336426, 0.4744873)
 
 [node name="Pc" instance=ExtResource("1_5rl7t")]
 script = ExtResource("2_qd3p6")
@@ -50,16 +54,43 @@ transform = Transform3D(0.35231894, 0, 0, 0, 0.35231894, 0, 0, 0, 0.17002347, 0.
 
 [node name="Screen" type="MeshInstance3D" parent="." index="3"]
 transform = Transform3D(0.9998477, -0.017452406, 0, -7.628689e-10, -4.370473e-08, -1, 0.017452406, 0.9998477, -4.371139e-08, 0.29406685, 0.43971932, -0.09808487)
+layers = 16
 material_overlay = SubResource("StandardMaterial3D_2wdt7")
 mesh = SubResource("PlaneMesh_o5wjj")
 
 [node name="ScreenViewport" type="SubViewport" parent="." index="4"]
 size = Vector2i(320, 180)
 
-[node name="TextureRect" type="TextureRect" parent="ScreenViewport" index="0"]
+[node name="VideoIntro" type="VideoStreamPlayer" parent="ScreenViewport" index="0"]
+offset_right = 320.0
+offset_bottom = 180.0
+stream = ExtResource("7_pghs8")
+
+[node name="ArtificialIntelligence" type="TextureRect" parent="ScreenViewport" index="1"]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("3_o5wjj")
+
+[node name="CodeEditor" type="TextureRect" parent="ScreenViewport" index="2"]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("3_o5wjj")
+texture = ExtResource("4_2wdt7")
+
+[node name="OnlineVideos" type="TextureRect" parent="ScreenViewport" index="3"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_heffb")
+
+[node name="Wallpaper" type="TextureRect" parent="ScreenViewport" index="4"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_uuu8i")
+
+[node name="BlackScreen" type="TextureRect" parent="ScreenViewport" index="5"]
+modulate = Color(0, 0, 0, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_uuu8i")
 
 [node name="MonitorCollision" type="CollisionShape3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29599762, 0.34172058, -0.19995117)
@@ -88,7 +119,8 @@ light_cull_mask = 4293918733
 
 [node name="ColorTimer" type="Timer" parent="." index="9"]
 
-[node name="AreaNear" type="Area3D" parent="." index="10"]
+[node name="AreaNear" type="Area3D" parent="." index="10" groups=["area_near"]]
+visible = false
 collision_layer = 8
 collision_mask = 2
 
@@ -98,14 +130,16 @@ shape = SubResource("BoxShape3D_2wdt7")
 debug_color = Color(1, 0, 0.03529412, 1)
 
 [node name="RevisionArea" type="Area3D" parent="." index="11"]
+visible = false
 collision_layer = 8
 collision_mask = 2
 
 [node name="RevisionCollision" type="CollisionShape3D" parent="RevisionArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5309923, 0.0761112, 0.36993408)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6150812, 0.0761112, 0.37524414)
 shape = SubResource("BoxShape3D_heffb")
 debug_color = Color(0.91788495, 6.497651e-05, 0.7005552, 1)
 
+[connection signal="timeout" from="ColorTimer" to="." method="_on_color_timer_timeout"]
 [connection signal="body_entered" from="AreaNear" to="." method="_on_area_near_body_entered"]
 [connection signal="body_exited" from="AreaNear" to="." method="_on_area_near_body_exited"]
 [connection signal="body_entered" from="RevisionArea" to="." method="_on_revision_area_body_entered"]

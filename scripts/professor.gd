@@ -5,9 +5,9 @@ const GRAVITY: float = 0.15
 var velocidad: float = 1.7
 var stamina: float = 100
 var lost_stamina: float = 8.0
-var gain_stamina: float = 50.0
+var gain_stamina: float = 28.5
 var min_stamina: float = 0.0
-var max_stamina:float = 100.0
+var max_stamina:float = 58.0
 var is_walking: bool = false
 var is_sitting: bool = false
 var can_walk: bool = true
@@ -36,9 +36,10 @@ func _physics_process(delta):
 		can_sit = false
 	else:
 		can_sit = true
-
+	
+	#region stamina and cintra
 	stamina = clamp(stamina, min_stamina, max_stamina)
-	lost_stamina = 8.0 if stamina > 20 else 4.0
+	lost_stamina = 4.6 if stamina > 20 else 2.3
 	if is_walking and can_walk and  not GM.checking:
 		if !GM.cintra_driked:
 			stamina -= lost_stamina * delta
@@ -51,6 +52,16 @@ func _physics_process(delta):
 		can_walk = false
 	if not can_walk and stamina >= max_stamina:
 		can_walk = true
+		
+	remaining_cintra_time = clamp(remaining_cintra_time, 0, 100)
+	if remaining_cintra_time <= 0:
+		GM.cintra_driked = false
+	
+	if GM.cintra_driked:
+		remaining_cintra_time -= 10 * delta
+	else:
+		remaining_cintra_time += 5
+	#endregion
 	
 	if Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down")\
 	or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
@@ -89,11 +100,6 @@ func _physics_process(delta):
 	
 	velocity = direction * velocidad
 	
-	#if direction.length() > 0:
-		#is_walking = true
-	#else:
-		#is_walking = false
-	
 	if Input.is_action_just_released("item"):
 		if !GM.cintra_driked and GM.cintra >0:
 			GM.cintra -= 1
@@ -101,15 +107,6 @@ func _physics_process(delta):
 			can_walk = true
 		else:
 			pass
-	
-	remaining_cintra_time = clamp(remaining_cintra_time, 0, 100)
-	if remaining_cintra_time <= 0:
-		GM.cintra_driked = false
-	
-	if GM.cintra_driked:
-		remaining_cintra_time -= 10 * delta
-	else:
-		remaining_cintra_time += 5
 	
 	var nueva_caminando = direction.length() > 0.1
 
@@ -135,14 +132,17 @@ func _physics_process(delta):
 	move_and_slide()
 
 func actualizar_animacion():
-	if is_walking and not GM.checking:
-		anim_player.play("Start_Walk")
-		await anim_player.animation_finished
-		if is_walking:
-			anim_player.play("Walk")
-		else:
-			anim_player.play("Start_Walk")
-			anim_player.stop()
+	if is_walking and not GM.checking and stamina > 20:
+		#anim_player.play("Start_Walk")
+		#await anim_player.animation_finished
+		#if is_walking:
+			#anim_player.play("Walk")
+		#else:
+			#anim_player.play("Start_Walk")
+			#anim_player.stop()
+		anim_player.play("Walk")
+	elif stamina <= 20:
+		anim_player.play("Walk_Tire")
 	else:
 		anim_player.play("End_Walk")
 		#anim_player.stop()

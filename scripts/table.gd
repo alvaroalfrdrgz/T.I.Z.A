@@ -2,7 +2,6 @@ extends Node3D
 
 var professor_is_in_range: bool = false
 var associated_pc: Node3D = null 
-@onready var interaction_area: Area3D = $InteractionArea
 
 func _ready():
 	var pc_name = name.replace("Table", "Pc")
@@ -15,4 +14,4 @@ func _ready():
 		set_process(false)
 		return
 	
-	print("Mesa " + name + " conectada con PC " + pc_name)
+	#print("Mesa " + name + " conectada con PC " + pc_name)

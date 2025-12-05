@@ -39,7 +39,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:WallMesh": {
+"PATH:Pared Arriba": {
 "mesh_instance/layers": 1024
 }
 }

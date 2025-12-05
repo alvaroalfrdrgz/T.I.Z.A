@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjx1ipg128av6"]
+
+[ext_resource type="Texture2D" uid="uid://dah08jnvife2e" path="res://assets/ui/end_ui.png" id="1_bv5pc"]
+[ext_resource type="Script" uid="uid://dqng6cylnduw2" path="res://scripts/end_ui.gd" id="1_e4cs6"]
+[ext_resource type="FontFile" uid="uid://drsi2osf4btot" path="res://assets/fonts/KGBlankSpaceSolid.ttf" id="2_e4cs6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o40n0"]
+font = ExtResource("2_e4cs6")
+font_size = 50
+
+[node name="EndUI" type="CanvasLayer"]
+script = ExtResource("1_e4cs6")
+
+[node name="Panel" type="TextureRect" parent="."]
+offset_left = 160.0
+offset_top = 90.0
+offset_right = 1760.0
+offset_bottom = 990.0
+pivot_offset = Vector2(800, 450)
+texture = ExtResource("1_bv5pc")
+
+[node name="ReputationText" type="Label" parent="."]
+offset_left = 742.0
+offset_top = 506.5
+offset_right = 1084.0
+offset_bottom = 573.5
+text = "REPUTATION:"
+label_settings = SubResource("LabelSettings_o40n0")
+
+[node name="Reputation" type="Label" parent="."]
+offset_left = 1092.0
+offset_top = 506.5
+offset_right = 1185.0
+offset_bottom = 573.5
+label_settings = SubResource("LabelSettings_o40n0")

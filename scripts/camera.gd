@@ -6,7 +6,7 @@ var is_on_left: bool = false
 var can_top: bool = true
 var can_side: bool = true
 
-@onready var wall_mesh: MeshInstance3D = $"../Walls/MainWall/WallMesh"
+@onready var wall_mesh: MeshInstance3D = $"../Walls/MainWall/Pared Arriba"
 @onready var back_wall_mesh: MeshInstance3D = $"../Walls/BackWall/BackWallMesh"
 @onready var window_wall_mesh: MeshInstance3D = $"../Walls/WindowWall/WindowWallMesh"
 @onready var door_wall_mesh: MeshInstance3D = $"../Walls/DoorWall/DoorWallMesh"
